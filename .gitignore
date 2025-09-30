@@ -1,0 +1,11 @@
+# Generated build output
+out/
+
+# Simulation artifacts
+*.vcd
+*.log
+
+# Local editor and operating-system files
+.vscode/
+.DS_Store
+
