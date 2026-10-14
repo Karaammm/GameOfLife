@@ -8,4 +8,5 @@ out/
 # Local editor and operating-system files
 .vscode/
 .DS_Store
-
+__pycache__/
+*.py[cod]

@@ -17,6 +17,18 @@ The image targets `linux/amd64` because the included `Vtb` executable is a
 Linux x86-64 binary. Docker Desktop supplies emulation when the host is
 Apple Silicon.
 
+The repository also includes a standalone terminal frontend. Run it with:
+
+```sh
+docker run --rm --platform linux/amd64 -it game-of-life \
+  python3 /usr/local/bin/terminal-game
+```
+
+This frontend renders a 10x12 Game of Life board and supports the controls
+shown below. It is a terminal implementation of the board and controls; it
+does not drive the prebuilt `Vtb` process because the HDL and C++ sources
+needed to connect to that binary are not included.
+
 The simulator is an interactive, long-running process. Stop it with
 `Ctrl-C`.
 
@@ -33,6 +45,7 @@ An exit status of `124` means the simulator ran for the full timeout.
 
 - `gol.s` - the RISC-V assembly source.
 - `Vtb` - the prebuilt Verilator testbench.
+- `terminal_game.py` - the interactive terminal frontend.
 - `mmio.ld` - the memory map used by the assembly build.
 - `Dockerfile` - reproducible runtime image definition.
 - `Makefile` - legacy assembly and Verilator build rules.
