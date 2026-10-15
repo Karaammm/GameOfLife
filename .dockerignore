@@ -1,8 +1,6 @@
 .git
 .vscode
 out
-*.vcd
-*.log
 README.md
 Makefile
 gol.s
